@@ -5,7 +5,7 @@
       <van-tabs v-model="active" color="#3AC461" line-width="50%" line-height="2px" @change="tab">
         <van-tab title="个人消息"></van-tab>
         <van-tab title="东风通知"></van-tab>
-        <van-tab :dot='$store.state.user.unread!=0' title="在线客服"></van-tab>
+        <!-- <van-tab :dot='$store.state.user.unread!=0' title="在线客服"></van-tab> -->
       </van-tabs>
     </div>
     <div class="main">

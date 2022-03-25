@@ -88,7 +88,7 @@
               </div>
             </li>
             <!-- @click="next('/about','8')" -->
-            <li class="my_cell_item van-hairline--bottom  " @click="about()">
+            <!-- <li class="my_cell_item van-hairline--bottom  " @click="about()">
               <div class="left">
                 <img src="../../assets/my/about_icon.png" alt="">
                 <span>关于我们</span>
@@ -96,7 +96,7 @@
               <div class="icon">
                 <van-icon class="icon_icon" size="16" name="arrow"/>
               </div>
-            </li>
+            </li> -->
             <li class="my_cell_item " @click="next('/set','8')">
               <div class="left">
                 <img src="../../assets/my/setting_icon.png" alt="">

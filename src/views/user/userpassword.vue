@@ -1,8 +1,8 @@
-<!-- 忘记密码 -->
+<!-- 忘记密码  right-text="客服"
+                 @click-right="onClickRight"-->
 <template>
   <div>
-    <van-nav-bar title="修改登录密码" left-text="" left-arrow fixed @click-left="onClickLeft" right-text="客服"
-                 @click-right="onClickRight"/>
+    <van-nav-bar title="修改登录密码" left-text="" left-arrow fixed @click-left="onClickLeft" />
     <div class="main">
       <div class="input_item">
         <van-field clearable label="手机号" v-model="phone" type="number" placeholder="请输入手机号" maxlength="11"/>

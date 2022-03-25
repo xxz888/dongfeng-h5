@@ -16,7 +16,7 @@
           </div>
         </a>
       </div>
-      <div v-if="geMeiqia" style="margin-top: -44px" class="item" @click="meiqia">
+      <!-- <div v-if="geMeiqia" style="margin-top: -44px" class="item" @click="meiqia">
         <div class="item_left">
           <img src="../../assets/contact/kf_btn_online_icon.png" alt="">
           <span>在线客服</span>
@@ -24,7 +24,7 @@
         <div class="item_right">
           <img src="../../assets/contact/right.png" alt="">
         </div>
-      </div>
+      </div> -->
       <div class="item" @click="gonext('feedback')">
         <div class="item_left">
           <img src="../../assets/contact/kf_btn_tousu_icon.png" alt="">

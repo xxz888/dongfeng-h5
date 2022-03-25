@@ -57,14 +57,14 @@
               <img src="../../assets/profit/slotcard_icon.png" alt="">
               <p>刷卡分润</p>
             </li>
-            <li class="item" @click="next('profitCashback',10)">
+            <!-- <li class="item" @click="next('profitCashback',10)">
               <img src="../../assets/profit/vipcommission.png" alt="">
               <p>直推首还奖</p>
             </li>
             <li class="item" @click="next('profitCashback',0)">
               <img src="../../assets/profit/standard_subsidy_icon.png" alt="">
               <p>直推激活奖</p>
-            </li>
+            </li> -->
             <li class="item" @click="next('profitType',3)">
               <img src="../../assets/profit/subsidy.png" alt="">
               <p>平级管理奖</p>

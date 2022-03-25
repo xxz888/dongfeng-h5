@@ -45,7 +45,7 @@
               </van-field>
             </div>
           </div>
-          <p v-if="geMeiqia" class="forget"><span @click="meiqia">收不到验证码?点我</span></p>
+          <!-- <p v-if="geMeiqia" class="forget"><span @click="meiqia">收不到验证码?点我</span></p> -->
 
         </li>
 
@@ -90,7 +90,7 @@ export default {
       message: "发送验证码",
       preUserPhone: '',
       regPwd: '',
-      geMeiqia: window.eventBus.geMeiqia, //是否有美洽
+      //geMeiqia: window.eventBus.geMeiqia, //是否有美洽
 
     };
   },

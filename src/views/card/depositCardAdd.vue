@@ -1,7 +1,11 @@
 <template>
   <div>
-    <van-nav-bar title="添加储蓄卡" left-text="返回" left-arrow @click-left="onClickLeft" right-text="客服"
-                 @click-right="onClickRight"/>
+    <!-- <van-nav-bar title="添加储蓄卡" left-text="返回" left-arrow @click-left="onClickLeft" right-text="客服"
+                 @click-right="onClickRight"/> -->
+
+
+                          <van-nav-bar class="online_nav theme_bg" left-arrow fixed :border='false'
+                   @click-left="$router.push({name:'login'})"/>
     <div class="warpper">
       <div class="deposit_upcreditcard_title">请添加本人储蓄卡作为结算卡，该卡作为后续刷卡、提现资金的结算 账号，户名必须与实名认证姓名一致</div>
       <div class="card_box">

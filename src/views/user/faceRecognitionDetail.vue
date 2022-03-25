@@ -1,7 +1,7 @@
-<!-- 新实名认证 -->
+<!-- 新实名认证  right-text="客服" @click-right="onClickRight"-->
 <template>
   <div>
-    <van-nav-bar class="online_nav theme_bg" title="实名认证" left-arrow fixed :border='false' @click-left="onClickLeft" right-text="客服" @click-right="onClickRight"/>
+    <van-nav-bar class="online_nav theme_bg" title="实名认证" left-arrow fixed :border='false' @click-left="onClickLeft" />
     <div class="warpper_top"></div>
     <div class="main ignore">
       <div class="content">

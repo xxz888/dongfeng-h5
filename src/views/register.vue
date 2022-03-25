@@ -1,8 +1,10 @@
 <template>
   <div class="login">
     <div class="top">
-      <van-nav-bar class="online_nav theme_bg" left-arrow fixed :border='false'
-                   @click-left="$router.push({name:'login'})" right-text="客服" @click-right="onClickRight"/>
+      <!-- <van-nav-bar class="online_nav theme_bg" left-arrow fixed :border='false'
+                   @click-left="$router.push({name:'login'})" right-text="客服" @click-right="onClickRight"/> -->
+                     <van-nav-bar class="online_nav theme_bg" left-arrow fixed :border='false'
+                   @click-left="$router.push({name:'login'})"/>
     </div>
     <div class="cont">
       <ul class="list">
