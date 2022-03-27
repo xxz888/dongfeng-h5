@@ -437,6 +437,12 @@ const routes = [
     meta: { title: '客服留言板' }
   },
   {
+    path: "/person",
+    name: "person",
+    component: () => import("@/views/tabBar/person"),
+    meta: { title: '分享' }
+  },
+  {
     path: '/kadeWorld',
     name: 'kadeWorld',
     component: () => import("@/views/external/kadeWorld"),

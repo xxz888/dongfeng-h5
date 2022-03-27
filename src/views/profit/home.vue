@@ -65,10 +65,7 @@
               <img src="../../assets/profit/standard_subsidy_icon.png" alt="">
               <p>直推激活奖</p>
             </li> -->
-            <li class="item" @click="next('profitType',3)">
-              <img src="../../assets/profit/subsidy.png" alt="">
-              <p>平级管理奖</p>
-            </li>
+         
             <li class="item" @click="next('profitRecord',userAccount.totalPay)">
               <img src="../../assets/profit/withdrawal_icon.png" alt="">
               <p>提现记录</p>
@@ -76,6 +73,10 @@
             <li class="item" @click="next('profitUser',1)">
               <img src="../../assets/profit/user_icon.png" alt="">
               <p>我的直推</p>
+            </li>
+               <li class="item" @click="next('profitType',3)">
+              <img src="../../assets/profit/subsidy.png" alt="">
+              <p>平级管理奖</p>
             </li>
             <!-- <li class="item" @click="next('shouyiguize', 22)">
               <img src="../../assets/profit/rule_icon.png" alt="">

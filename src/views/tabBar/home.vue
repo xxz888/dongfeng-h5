@@ -7,8 +7,7 @@
       <div class="home_header_title">首页</div>
       <div class="home_header_item" @click="meiqia">
         <div class="home_header_right">
-          <span v-show="$store.state.user.unread" class="dot">{{ $store.state.user.unread }}</span>
-          <img src="@/assets/home/information.png" alt="">
+          <span>客服</span>
         </div>
       </div>
     </div>
@@ -40,7 +39,7 @@
             </li>
               <li class="menu_item" @click="showMsg1()">
               <img src="../../assets/home/menu_creditcard_icon.png" alt="">
-              <div class="">信用卡办卡</div>
+              <div class="">团队管理</div>
             </li>
             <li class="menu_item" @click="showMsg1()">
               <img src="../../assets/home/menu_agnet_icon.png" alt="">
@@ -79,22 +78,22 @@
             </div>
           </div>
           <div class="skip">
-            <div @click="$router.push('/sharePage')" class="skip_share">
+            <!-- <div @click="$router.push('/sharePage')" class="skip_share">
               <h5>分享推广</h5>
               <p>推广越多/赚的越多</p>
-            </div>
+            </div> -->
             <div @click="$router.push('/library')" class="skip_item">
-              <h5>一键朋友圈</h5>
-              <p>一键推广/省时省力</p>
+              <h5 style="margin-top:10px">一键朋友圈</h5>
+              <p style="margin-top:40px">一键推广/省时省力</p>
             </div>
-            <div @click="$router.push('/partnerBusiness')" class="skip_material">
+            <!-- <div @click="$router.push('/partnerBusiness')" class="skip_material">
               <h5>推广物料</h5>
               <p>应有尽有/丰富多彩</p>
             </div>
             <div @click="$router.push('/news')" class="skip_news">
               <h5>业内动态</h5>
               <p>了解动态/运筹帷幄</p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -255,11 +254,11 @@ export default {
       })
     },
     huodong(item) {
-      if (item.url) {
-        window.open(item.url)
-      } else {
-        this.$toast({message: '暂无活动地址', position: 'bottom'})
-      }
+      // if (item.url) {
+      //   window.open(item.url)
+      // } else {
+      //   this.$toast({message: '暂无活动地址', position: 'bottom'})
+      // }
     },
     link(item) {
       let num = 0
@@ -381,7 +380,7 @@ export default {
       }, 1000);
     },
     meiqia() {
-      this.$router.push({name: 'service', params: {num: this.serviceNum.length}})
+      this.$router.push({name: 'contact',})
     }
   }
 }
@@ -591,8 +590,8 @@ export default {
 }
 
 .skip div {
-  width: 47%;
-  height: 70px;
+  width: 100%;
+  height: 170px;
   margin: 5px 0px;
   font-size: 12px;
   color: #fff;
@@ -636,7 +635,7 @@ export default {
   color: #fff;
   display: inline-block;
   background-color: red;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
   line-height: 12px;
   padding: 0px 3.5px;

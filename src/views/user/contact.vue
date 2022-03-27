@@ -25,10 +25,19 @@
           <img src="../../assets/contact/right.png" alt="">
         </div>
       </div> -->
-      <div class="item" @click="gonext('feedback')">
+      <!-- <div class="item" @click="gonext('feedback')">
         <div class="item_left">
           <img src="../../assets/contact/kf_btn_tousu_icon.png" alt="">
           <span>投诉建议</span>
+        </div>
+        <div class="item_right">
+          <img src="../../assets/contact/right.png" alt="">
+        </div>
+      </div> -->
+      <div class="item" @click="tel()">
+        <div class="item_left">
+          <img src="../../assets/contact/phone_btn_online_icon.png" alt="">
+          <span>电话客服 </span>
         </div>
         <div class="item_right">
           <img src="../../assets/contact/right.png" alt="">
@@ -53,6 +62,9 @@
         </div>
       </div> -->
     </div>
+
+      <!-- <cardconfirm ref="cardconfirm" but='1' @disconfirm='tel()' :src='require("@/assets/alert/alert.png")'
+                 :zi='"是否拨打"+servicePhone'/> -->
   </div>
 </template>
 
@@ -60,6 +72,7 @@
 import {NavBar, Dialog} from 'vant'
 import {brandQuery} from '@/api/showBrand'
 import {preUserQuery} from "@/api/user";
+import cardconfirm from '@/components/confirm/alert'
 
 export default {
   data() {
@@ -73,17 +86,22 @@ export default {
       brandPhone: '',
       prepreUserPhone: "",
       geMeiqia: window.eventBus.geMeiqia, //是否有美洽
+      servicePhone:'4008628826'
     };
   },
   components: {
     [NavBar.name]: NavBar,
-    [Dialog.Component.name]: Dialog.Component
+    [Dialog.Component.name]: Dialog.Component,
   },
   created() {
     this.getBrand()
     this._preUserQuery()
   },
   methods: {
+    telAction() {
+          this.$refs.cardconfirm.disopen()
+      
+    },
     onClickLeft() {
       window.history.back()
       return
@@ -94,6 +112,12 @@ export default {
           this.prepreUserPhone = res.result.preUserPhone
         }
       })
+    },
+    tel() {
+      let a = document.createElement('a')
+      a.setAttribute('href', 'tel:' + this.servicePhone)
+      a.click()
+      a.remove()
     },
     toWeixin() {
       this.weixinBox = true

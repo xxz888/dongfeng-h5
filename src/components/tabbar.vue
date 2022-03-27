@@ -7,10 +7,18 @@
           <span>首页</span>
           <img slot="icon" slot-scope="props" :src="props.active ? iconHome.active : iconHome.normal">
         </van-tabbar-item>
+        <van-tabbar-item name="share" :to="'/person'"
+          replace>
+          <span>分享</span>
+          <img slot="icon" slot-scope="props" :src="props.active ? iconShare.active : iconShare.normal">
+        </van-tabbar-item>
         <van-tabbar-item name="news" :to="'/profitHome'" replace>
           <span>收益中心</span>
           <img slot="icon" slot-scope="props" :src="props.active ? iconNews.active : iconNews.normal">
         </van-tabbar-item>
+
+
+        
         <!-- <van-tabbar-item name="share" :to="'/share'"
           replace>
           <span>推广</span>

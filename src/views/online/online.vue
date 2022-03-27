@@ -43,11 +43,11 @@
           <span class="set" @click="seleDefCard(1)">更换 ></span>
         </div>
         <div style="color:#999;font-size:13px;line-height:20px;">
-          <p>大额费率：0.65%（每1万元65元手续费）+2元/次</p>
+          <!-- <p>大额费率：0.65%（每1万元65元手续费）+2元/次</p>
           <p>您是 <span style="color:red">{{ level.levelName }}</span> 用户，每1万元可以返 <span
             style="color:red">{{ handleAmount(1) }} </span> 元</p>
-          <br>
-          <p>小额费率：0.45%（每1万元45元手续费）+2元/次</p>
+          <br> -->
+          <p>小额费率：0.65%（每1万元65元手续费）</p>
           <p>您是 <span style="color:red">{{ level.levelName }} </span>用户，每1万元可以返 <span
             style="color:red">{{ handleAmount(0) }} </span>元</p>
         </div>

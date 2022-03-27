@@ -7,7 +7,7 @@
         <ul class="card_rate" v-if="!empowerToken">
           <li>
             <span class="theme_color">·</span>
-            费率：0.88%（每1万元88元手续费）+1元/次
+            费率：0.65%（每1万元65元手续费）
           </li>
           <li>
             <span class="theme_color">·</span>
@@ -286,6 +286,9 @@ export default {
       });
     },
     getcard() {
+      if (!this.empowerToken) {
+        return;
+      }
       //查询信用卡
       this.helpTrueFalseBy = false
       //从中介代还进来的路由会带身份证号

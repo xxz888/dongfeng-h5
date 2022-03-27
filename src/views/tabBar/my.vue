@@ -31,7 +31,7 @@
         </div>
         <div class="my_cell_box">
           <ul class="my_cell_list">
-            <li class="my_cell_item van-hairline--bottom" @click="next('/sharePage','8')">
+            <!-- <li class="my_cell_item van-hairline--bottom" @click="next('/sharePage','8')">
               <div class="left">
                 <img src="../../assets/my/qr_code_icon.png" alt="">
                 <span>推广二维码</span>
@@ -39,7 +39,7 @@
               <div class="icon">
                 <van-icon class="icon_icon" size="16" name="arrow"/>
               </div>
-            </li>
+            </li> -->
             <li class="my_cell_item van-hairline--bottom" @click="next('/myCard','8')">
               <div class="left">
                 <img src="../../assets/my/card_icon.png" alt="">
@@ -69,7 +69,7 @@
             </li>
             <li class="my_cell_item" @click="empower()">
               <div class="left">
-                <img src="../../assets/my/pre_icon.png" alt="">
+                <img src="../../assets/my/about_icon.png" alt="">
                 <span>{{ user.empower ? '关闭中介授权' : '开启中介授权' }}</span>
               </div>
               <div class="icon">
@@ -78,7 +78,7 @@
             </li>
           </ul>
           <ul class="my_cell_list">
-            <li class="my_cell_item van-hairline--bottom" @click="next('/contact','8')">
+            <!-- <li class="my_cell_item van-hairline--bottom" @click="next('/contact','8')">
               <div class="left">
                 <img src="../../assets/my/contact_icon.png" alt="">
                 <span>联系我们</span>
@@ -86,7 +86,7 @@
               <div class="icon">
                 <van-icon class="icon_icon" size="16" name="arrow"/>
               </div>
-            </li>
+            </li> -->
             <!-- @click="next('/about','8')" -->
             <!-- <li class="my_cell_item van-hairline--bottom  " @click="about()">
               <div class="left">
