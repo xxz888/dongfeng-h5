@@ -286,9 +286,7 @@ export default {
       });
     },
     getcard() {
-      if (!this.empowerToken) {
-        return;
-      }
+
       //查询信用卡
       this.helpTrueFalseBy = false
       //从中介代还进来的路由会带身份证号
