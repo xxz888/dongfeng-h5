@@ -7,7 +7,7 @@
         <ul class="card_rate" v-if="!empowerToken">
           <li>
             <span class="theme_color">·</span>
-            费率：0.65%（每1万元65元手续费）
+            费率：0.89%（每1万元89元手续费）
           </li>
           <li>
             <span class="theme_color">·</span>
