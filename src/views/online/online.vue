@@ -47,7 +47,7 @@
           <p>您是 <span style="color:red">{{ level.levelName }}</span> 用户，每1万元可以返 <span
             style="color:red">{{ handleAmount(1) }} </span> 元</p>
           <br> -->
-          <p>小额费率：0.65%（每1万元65元手续费）</p>
+          <p>小额费率：0.69%（每1万元69元手续费）</p>
           <p>您是 <span style="color:red">{{ level.levelName }} </span>用户，每1万元可以返 <span
             style="color:red">{{ handleAmount(0) }} </span>元</p>
         </div>
