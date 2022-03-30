@@ -205,7 +205,7 @@ export default {
     },
     handleFan(){
       if(this.level.diffRate){
-        return (88-this.level.diffRate.settle*10000).toFixed(0)
+        return (89-this.level.diffRate.settle*10000).toFixed(0)
       }else{
         return 0
       }
