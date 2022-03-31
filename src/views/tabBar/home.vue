@@ -41,7 +41,7 @@
               <img src="../../assets/home/menu_creditcard_icon.png" alt="">
               <div class="">团队管理</div>
             </li>
-            <li class="menu_item" @click="showMsg1()">
+            <li class="menu_item" @click="operationVideo()">
               <img src="../../assets/home/menu_agnet_icon.png" alt="">
               <div class="">操作视频</div>
             </li>
@@ -367,6 +367,10 @@ export default {
     },
     showMsg(){
       this.$toast({message: '该功能暂未开放', position: 'bottom'})
+    },
+      //操作视频
+    operationVideo() {
+      this.$router.push({ name: "operationVideo" });
     },
     // 下拉刷新
     onRefresh() {

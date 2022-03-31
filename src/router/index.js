@@ -431,6 +431,22 @@ const routes = [
     meta: { title: '消息中心' }
   },
   {
+    path: "/operationVideo",
+    name: "operationVideo",
+    component: () => import("@/views/online/operationVideo"),
+    meta: {
+      title: '操作视频',
+    },
+  },
+  {
+    path: "/operationVideoDetail",
+    name: "operationVideoDetail",
+    component: () => import("@/views/online/operationVideoDetail"),
+    meta: {
+      title: '操作视频',
+    },
+  },
+  {
     path: "/leave",
     name: "leave",
     component: () => import("@/views/tabBar/leave"),

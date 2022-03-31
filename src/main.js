@@ -11,6 +11,12 @@ import {Notify, Toast, Dialog} from 'vant';
 import * as filters from './common/filters/filters';
 import service from '@/js/service'
 import global from './views/global/global'//引用文件
+import VideoPlayer from 'vue-video-player'
+import 'vue-video-player/src/custom-theme.css'
+import 'video.js/dist/video-js.css'
+Vue.use(VideoPlayer)
+
+
 Vue.prototype.global = global//挂载到Vue实例上面
 window.eventBus = new Vue();
 Vue.use(vueAxios, axios)
