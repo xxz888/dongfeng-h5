@@ -29,7 +29,7 @@
         <div class="menu_box">
           <ul class="menu_list">
 <!--            <li class="menu_item" @click="next('/agent',8)">-->
-            <li class="menu_item" @click="showMsg()">
+            <li class="menu_item" @click="teamManager()">
               <img src="../../assets/home/menu_rep_icon.png" alt="">
               <div class="">我的团队</div>
             </li>
@@ -37,9 +37,9 @@
               <img src="../../assets/home/menu_profit_icon.png" alt="">
               <div class="">中介模式</div>
             </li>
-              <li class="menu_item" @click="showMsg1()">
+              <li class="menu_item" @click="policyManager()">
               <img src="../../assets/home/menu_creditcard_icon.png" alt="">
-              <div class="">团队管理</div>
+              <div class="">代理政策</div>
             </li>
             <li class="menu_item" @click="operationVideo()">
               <img src="../../assets/home/menu_agnet_icon.png" alt="">
@@ -160,9 +160,24 @@ export default {
     }
   },
   methods: {
+    policyManager(){
+      this.$router.push({
+        name: "appLink",
+        params: {
+          url: JSON.stringify(
+            "http://dongfenglm.oss-cn-shanghai.aliyuncs.com/proxyd.png"
+          ),
+          title: JSON.stringify("代理政策"),
+          type: "2",
+        },
+      });
+    },
+     //团队管理
+    teamManager() {
+      this.$router.push({ name: "teamManager" });
+    },
     showMsg1(){
-                this.$toast({message: '敬请期待', position: 'bottom'})
-
+      this.$toast({message: '敬请期待', position: 'bottom'})
     },
     _getVersion(){
       getVersionnumber(this.global.brandId).then(res=>{

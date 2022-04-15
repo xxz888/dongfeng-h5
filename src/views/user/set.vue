@@ -10,7 +10,7 @@
         </van-cell>
         <van-cell title="修改交易密码" :icon="require('../../assets/set/password_icon.png')" is-link to="password"/>
       </van-cell-group>
-      <div class="submit theme_btn_dark" @click="outLogin()">退出登录</div>
+      <div class="submit" @click="outLogin()">退出登录</div>
     </div>
   </div>
 </template>
@@ -96,6 +96,7 @@ export default {
   text-align: center;
   font-size: 16px;
   color: #FFFFFF;
-  box-shadow: 2px 3px 3px 0 rgba(130, 130, 130, .1);
+  background: #4cc566;
+  /* box-shadow: 2px 3px 3px 0 rgba(130, 130, 130, .1); */
 }
 </style>

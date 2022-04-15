@@ -88,7 +88,7 @@ ul,li {
   padding-top: 46px !important;
 }
 .theme-linear-bg{
-  background: linear-gradient(180deg, #CCA264 0%, #AA7322 100%) !important;
+  background: linear-gradient(180deg, #4cc566,#4cc566 100%) !important;
 }
 
 .theme_bg{
@@ -99,7 +99,7 @@ ul,li {
   background: linear-gradient(180deg, #4cc566,#4cc566) !important;
 }
 .theme_btn_dark{
-  background: linear-gradient(180deg, #CCA264 0%, #AA7322 100%) !important;
+  background: linear-gradient(180deg, #4cc566 0%, #AA7322 100%) !important;
 }
 .theme{
   color: #F08300  !important;

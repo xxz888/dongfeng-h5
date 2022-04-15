@@ -47,9 +47,9 @@
           <p>您是 <span style="color:red">{{ level.levelName }}</span> 用户，每1万元可以返 <span
             style="color:red">{{ handleAmount(1) }} </span> 元</p>
           <br> -->
-          <p>费率：0.69%（每1万元69元手续费）</p>
+          <p>费率：0.65%（每1万元65元手续费）</p>
           <p>您是 <span style="color:red">{{ level.levelName }} </span>用户，每1万元可以返 <span
-            style="color:red">{{ handleAmount(0) }} </span>元</p>
+            style="color:red">{{ handleAmount(65) }} </span>元</p>
         </div>
       </div>
     </div>
@@ -221,7 +221,7 @@ export default {
     },
     handleAmount(type) {
       if (this.level.diffRate) {
-          return (69 - this.level.diffRate.bigFast * 10000).toFixed(0)
+          return (type - this.level.diffRate.bigFast * 10000).toFixed(0)
       } else {
         return 0
       }

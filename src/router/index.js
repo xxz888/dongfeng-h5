@@ -493,7 +493,24 @@ const routes = [
     name: "accountAdd",
     component: () => import("@/views/card/accountadd"),
     meta: { title: '添加支付宝账户' }
-  }
+  },
+
+  {
+    path: "/teamManager",
+    name: "teamManager",
+    component: () => import("@/views/online/teamManager"),
+    meta: {
+      title: '团队管理',
+    },
+  },
+  {
+    path: "/teamManagerDetail",
+    name: "teamManagerDetail",
+    component: () => import("@/views/online/teamManagerDetail"),
+    meta: {
+      title: '团队管理详情',
+    },
+  },
 ];
 
 const originalPush = Router.prototype.push

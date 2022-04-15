@@ -7,11 +7,11 @@
         <ul class="card_rate" v-if="!empowerToken">
           <li>
             <span class="theme_color">·</span>
-            费率：0.89%（每1万元89元手续费）
+            费率：0.85%（每1万元85元手续费）
           </li>
           <li>
             <span class="theme_color">·</span>
-            您是 <span style="color: #F5552A">{{ level.levelName }}</span>用户，每还款1万元可以返<span style="color: #F5552A"> {{ handleFan() }}</span>元
+            您是 <span style="color: #F5552A">{{ level.levelName }}</span>用户，每还款1万元可以返<span style="color: #F5552A"> {{ handleFan(85) }}</span>元
           </li>
         </ul>
         <ul class="card_rate" v-else>
@@ -203,9 +203,9 @@ export default {
         }
       })
     },
-    handleFan(){
+    handleFan(type){
       if(this.level.diffRate){
-        return (89-this.level.diffRate.settle*10000).toFixed(0)
+        return (type-this.level.diffRate.settle*10000).toFixed(0)
       }else{
         return 0
       }

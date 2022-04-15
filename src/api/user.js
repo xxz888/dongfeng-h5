@@ -321,3 +321,25 @@ export function getVersionnumber(brandId) {
       method: 'get',
   })
 }
+
+
+export function getTeamManager(){
+  return request({
+    url: '/user/app/team/manager',
+    method: 'post'
+  })
+}
+
+
+export function getTeamManagerDetail(level,page,fullname) {
+  return request({
+    url: '/user/app/team/detail',
+    method: 'post',
+    data: qs.stringify({
+      'level':level,
+      'page':page,
+      'size':9999,
+      'fullname':fullname
+  })
+  })
+}
