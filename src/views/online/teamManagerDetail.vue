@@ -54,7 +54,7 @@
               }}</span>
             </div>
           </div>
-          <div class="right">
+          <!-- <div class="right">
             <div class="userTitle">空卡还款</div>
 
             <div>
@@ -62,7 +62,7 @@
                 (type == 0 ? item.curEmptyTotal : item.preEmptyTotal) | toFixed
               }}</span>
             </div>
-          </div>
+          </div> -->
           <!--  -->
         </div>
       </div>

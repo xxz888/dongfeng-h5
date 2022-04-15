@@ -53,7 +53,7 @@
               }}</span>
             </div>
           </div>
-          <div class="right">
+          <!-- <div class="right">
             <div class="userTitle">空卡还款</div>
             <div>
               笔数:<span class="theme1">{{
@@ -66,7 +66,7 @@
               }}</span>
             </div>
             <van-icon class="right_right" name="arrow" />
-          </div>
+          </div> -->
           <!--  -->
         </div>
       </div>
@@ -100,7 +100,7 @@
               }}</span>
             </div>
           </div>
-          <div class="right">
+          <!-- <div class="right">
             <div class="userTitle">空卡还款</div>
             <div>
               笔数:<span class="theme1">{{
@@ -113,7 +113,7 @@
               }}</span>
             </div>
             <van-icon class="right_right" name="arrow" />
-          </div>
+          </div> -->
           <!--  -->
         </div>
       </div>
@@ -147,7 +147,7 @@
               }}</span>
             </div>
           </div>
-          <div class="right">
+          <!-- <div class="right">
             <div class="userTitle">空卡还款</div>
             <div>
               笔数:<span class="theme1">{{
@@ -160,7 +160,7 @@
               }}</span>
             </div>
             <van-icon class="right_right" name="arrow" />
-          </div>
+          </div> -->
           <!--  -->
         </div>
       </div>
@@ -205,7 +205,7 @@
               }}</span>
             </div>
           </div>
-          <div class="right">
+          <!-- <div class="right">
             <div class="userTitle">空卡还款</div>
             <div>
               笔数:<span class="theme1">{{
@@ -222,7 +222,7 @@
                   | toFixed
               }}</span>
             </div>
-          </div>
+          </div> -->
           <!--  -->
         </div>
       </div>
