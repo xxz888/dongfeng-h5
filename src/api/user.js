@@ -343,3 +343,18 @@ export function getTeamManagerDetail(level,page,fullname) {
   })
   })
 }
+
+export function getExtension(){
+  return request({
+    url: '/user/app/self/extension',
+    method: 'post'
+  })
+}
+export function getTeamExtension(userId){
+  return request({
+    url: '/user/app/team/extension',
+    method: 'post',
+    data: qs.stringify({'userId':userId})
+  })
+}
+

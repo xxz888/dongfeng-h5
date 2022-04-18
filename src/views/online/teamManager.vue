@@ -5,7 +5,7 @@
       class="agent_nav theme_bg"
       style="background: none"
       :border="false"
-      title="推广收益"
+      title="团队管理"
       left-arrow
       @click-left="onClickLeft"
     >
@@ -25,7 +25,7 @@
       </van-tabs>
 
       <div class="profit_share_cont" @click="gonext(L1.level)">
-        <div class="themeTitle">直推</div>
+        <div class="themeTitle">{{'直推'+'('+L1Count+')'}}</div>
         <div class="user">
           <div class="left">
             <div class="userTitle">在线收款</div>
@@ -72,7 +72,7 @@
       </div>
 
       <div class="profit_share_cont" @click="gonext(L2.level)">
-        <div class="themeTitle">间推</div>
+        <div class="themeTitle">{{'间推'+'('+L2Count+')'}}</div>
         <div class="user">
           <div class="left">
             <div class="userTitle">在线收款</div>
@@ -119,7 +119,8 @@
       </div>
 
       <div class="profit_share_cont" @click="gonext(L3.level)">
-        <div class="themeTitle">三代及以下</div>
+        <div class="themeTitle">{{'三代及以下'+'('+L3Count+')'}}</div>
+
         <div class="user">
           <div class="left">
             <div class="userTitle">在线收款</div>
@@ -166,7 +167,8 @@
       </div>
 
       <div class="profit_share_cont">
-        <div class="themeTitle">总计</div>
+                <div class="themeTitle">{{'总计'+'('+(L1Count+L2Count+L3Count)+')'}}</div>
+
         <div class="user">
           <div class="left">
             <div class="userTitle">在线收款</div>
@@ -232,7 +234,7 @@
 
 <script>
 import { NavBar, Tab, Tabs, List, Icon } from "vant";
-import { getTeamManager } from "@/api/user";
+import { getTeamManager ,getExtension} from "@/api/user";
 import { getBrandNews } from "@/api/showBrand";
 
 export default {
@@ -253,6 +255,9 @@ export default {
       L1: {},
       L2: {},
       L3: {},
+      L1Count:0,
+      L2Count:0,
+      L3Count:0,
     };
   },
   components: {
@@ -265,6 +270,7 @@ export default {
   created() {
     this.token = localStorage.getItem("token");
     this.getTeamManager();
+    this._getExtension();
   },
   methods: {
     onClickLeft() {
@@ -275,7 +281,17 @@ export default {
     tab(item) {
       this.type = item;
     },
-
+    _getExtension(){
+        getExtension().then((res) => {
+        if (res.resp_code == "000000") {
+          this.L1Count = res.result.L1;
+          this.L2Count = res.result.L2;
+          this.L3Count = res.result.L3;
+        } else {
+          this.$toast({ message: res.resp_message, position: "bottom" });
+        }
+      });
+    },
     getTeamManager() {
       getTeamManager().then((res) => {
         if (res.resp_code == "000000") {

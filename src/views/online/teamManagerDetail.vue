@@ -32,7 +32,40 @@
       loading-text="加载中..."
     >
       <div class="profit_share_cont" v-for="(item, index) in list" :key="index">
-        <div class="user1">{{ item.fullname + "(" + item.phone + ")" }}</div>
+  
+
+       <div class="user">
+          <div class="left">
+
+            <div>
+              <span class="theme1">{{ item.fullname + "(" + item.phone + ")" }}</span>
+            </div>
+          </div>
+          <div class="right">
+
+            <div>
+            </div>
+          </div>
+          <div class="right_right">
+               <div class="detailClass" @click="getTeamExtension(item.userId)">推广查看</div>
+            <div>
+               </div> 
+            </div>
+        </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div class="user">
           <div class="left">
@@ -73,6 +106,7 @@
       description="暂无团队成员"
       :image="require('../../assets/user_empty.png')"
     />
+
   </div>
 </template>
 
@@ -87,9 +121,11 @@ import {
   PullRefresh,
   Sticky,
   Search,
+  Dialog
 } from "vant";
-import { getTeamManagerDetail } from "@/api/user";
+import { getTeamManagerDetail,getTeamExtension} from "@/api/user";
 import { getBrandNews } from "@/api/showBrand";
+    
 
 export default {
   data() {
@@ -111,6 +147,7 @@ export default {
       text: "",
       fullname: "",
       level: "",
+      showDetail:true
     };
   },
   components: {
@@ -123,8 +160,14 @@ export default {
     [PullRefresh.name]: PullRefresh,
     [Sticky.name]: Sticky,
     [Search.name]: Search,
+    [Dialog.Component.name]: Dialog.Component,
+
   },
   created() {
+         
+
+
+        
     this.token = localStorage.getItem("token");
 
     this.level = this.$route.params.level;
@@ -139,6 +182,21 @@ export default {
     },
 
     //
+    getTeamExtension(userId){
+      getTeamExtension(userId).then((res) => {
+          Dialog.alert({
+              theme: 'round-button',
+          confirmButtonColor:'#4cc566',
+          title: '',
+          message: `今天新增注册:${res.result.todayTotal}人\n今天新增实名:${res.result.todayRealname}人\n\n当月新增注册:${res.result.curMonthTotal}人\n当月新增实名:${res.result.curMonthRealname}人\n\n昨天新增注册:${res.result.yesterdayTotal}人\n昨天新增实名:${res.result.yesterdayRealname}人\n\n上月新增注册:${res.result.preMonthTotal}人\n上月新增实名:${res.result.preMonthRealname}人\n`,
+        }).then(() => {
+          // on close
+        });
+      })
+
+
+      
+    },
     getTeamManagerDetail() {
       var that = this;
       getTeamManagerDetail(this.level, 1, this.fullname).then((res) => {
@@ -325,5 +383,16 @@ export default {
 
 .agent_search_btn {
   color: #2574ea;
+}
+.detailClass{
+    width: 70px;
+    height: 24px;
+    background: #4cc566;
+    border-radius: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 23px;
+    margin-right: 5px;
+
 }
 </style>
