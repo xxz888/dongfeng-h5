@@ -12,6 +12,7 @@
     </van-nav-bar>
     <div class="warpper_top"></div>
 
+   
     <div class="agent_search">
       <van-search
         v-model="fullname"
@@ -21,9 +22,20 @@
         @search="onSearch"
       >
         <template #action>
-          <div class="agent_search_btn" @click="onSearch">搜索</div>
+          <div style="display: flex;">
+            <div class="agent_search_btn" @click="onSearch">搜索</div>
+            <van-popover v-model:show="showPopover" :actions="levelList" @select="onSelect">
+              <template #reference>
+                 <div style="margin-left:10px" @click="_getVipLevelList">{{selectOption}}</div>
+              </template>
+            </van-popover>
+          </div>
+
         </template>
       </van-search>
+                
+                
+
     </div>
 
     <van-pull-refresh
@@ -100,6 +112,12 @@
         </div>
       </div>
     </van-pull-refresh>
+
+
+
+
+
+
     <van-empty
       class="user_empty"
       v-if="list.length == 0"
@@ -121,9 +139,10 @@ import {
   PullRefresh,
   Sticky,
   Search,
-  Dialog
+  Dialog,
+  Popover
 } from "vant";
-import { getTeamManagerDetail,getTeamExtension} from "@/api/user";
+import { getTeamManagerDetail,getTeamExtension,getVipLevelList} from "@/api/user";
 import { getBrandNews } from "@/api/showBrand";
     
 
@@ -147,7 +166,13 @@ export default {
       text: "",
       fullname: "",
       level: "",
-      showDetail:true
+      showDetail:true,
+      levelList:[],
+      showPopover:false,
+      vipLevel:'',
+      name:'',
+      phone:'',
+      selectOption:'请选择等级'
     };
   },
   components: {
@@ -161,20 +186,38 @@ export default {
     [Sticky.name]: Sticky,
     [Search.name]: Search,
     [Dialog.Component.name]: Dialog.Component,
+      [Popover.name]: Popover,
 
   },
   created() {
-         
 
-
-        
     this.token = localStorage.getItem("token");
-
     this.level = this.$route.params.level;
     this.type = this.$route.params.type;
     this.getTeamManagerDetail();
   },
   methods: {
+    _getVipLevelList(){
+
+      if (this.levelList.length == 0) {
+         getVipLevelList().then((res=>{
+        this.showPopover = true;
+        this.levelList = [];
+        this.levelList = res.result;
+        for (const item of this.levelList) {
+          item.text = item.diffName;
+        }
+      }))
+      }else{
+           this.showPopover = true;
+      }
+     
+    },
+    onSelect(action){
+      this.selectOption = action.text;
+      this.vipLevel = action.diffLevel;
+      this.getTeamManagerDetail();
+    },
     onClickLeft() {
       window.history.back();
       return;
@@ -199,7 +242,8 @@ export default {
     },
     getTeamManagerDetail() {
       var that = this;
-      getTeamManagerDetail(this.level, 1, this.fullname).then((res) => {
+
+      getTeamManagerDetail(this.level, 1,this.fullname,this.vipLevel).then((res) => {
         if (res.resp_code == "000000") {
           that.list = [];
           that.list = res.result;

@@ -331,7 +331,7 @@ export function getTeamManager(){
 }
 
 
-export function getTeamManagerDetail(level,page,fullname) {
+export function getTeamManagerDetail(level,page,fullname,vipLevel) {
   return request({
     url: '/user/app/team/detail',
     method: 'post',
@@ -339,7 +339,8 @@ export function getTeamManagerDetail(level,page,fullname) {
       'level':level,
       'page':page,
       'size':9999,
-      'fullname':fullname
+      'vipLevel':vipLevel,
+      'phone':fullname
   })
   })
 }
@@ -355,6 +356,12 @@ export function getTeamExtension(userId){
     url: '/user/app/team/extension',
     method: 'post',
     data: qs.stringify({'userId':userId})
+  })
+}
+export function getVipLevelList(){
+  return request({
+    url: '/user/app/user/vipLevel/list',
+    method: 'post',
   })
 }
 

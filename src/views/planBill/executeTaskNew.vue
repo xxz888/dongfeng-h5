@@ -50,14 +50,14 @@
           <van-row type="flex">
             <van-col class="submit_plan_dec" span="12">
               <span class="submit_plan_dec_title color_999">预计手续费：</span>
-              <span class="submit_plan_dec_cont">{{ Number(task.totalServiceCharge) |toFixed }}元</span>
+              <span class="submit_plan_dec_cont">{{ (Number(task.totalServiceCharge) - Number(task.cashBacking)) |toFixed }}元</span>
             </van-col>
             <van-col class="submit_plan_dec" span="12">
               <span class="submit_plan_dec_title color_999">已扣手续费：</span>
-              <span class="submit_plan_dec_cont">{{ task.usedServiceCharge |toFixed }}元</span>
+              <span class="submit_plan_dec_cont">{{ (Number(task.usedServiceCharge) - Number(task.cashBacked) ) |toFixed }}元</span>
             </van-col>
           </van-row>
-          <van-row type="flex">
+          <!-- <van-row type="flex">
             <van-col class="submit_plan_dec" span="12">
               <span class="submit_plan_dec_title color_999">预计返现：</span>
               <span class="submit_plan_dec_cont">{{ Number(task.cashBacking) |toFixed }}元</span>
@@ -66,7 +66,7 @@
               <span class="submit_plan_dec_title color_999">已经返现：</span>
               <span class="submit_plan_dec_cont">{{ task.cashBacked |toFixed }}元</span>
             </van-col>
-          </van-row>
+          </van-row> -->
         </div>
         <ul class="plan_list" v-if="!task.id">
           <li class="plan_title">
