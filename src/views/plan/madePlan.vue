@@ -779,7 +779,7 @@ export default {
                 var current =  parseInt(this.currentMonth) < 9 ? ('0'+(parseInt(this.currentMonth) + 1)) : parseInt(this.currentMonth) + 1;
 
         var day = this.currentYear + '-' + current
-        if ((this.currentMonth + 1) > 12) {
+        if ((parseInt(this.currentMonth) + 1) > 12) {
           day = (this.currentYear + 1) + '-' + '1'
         }
         for (let i = 1; i <= nextMonthDateLen; i++) {
