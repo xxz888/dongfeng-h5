@@ -169,14 +169,21 @@ export default {
           if (res.result.content.length > 0) {
             let item = res.result.content[0]
             this.$store.commit('closeGuide')
-            this.$router.push({name: 'quickDetail', params: {item: JSON.stringify(item)}})
-          } else {
-            this.$router.push({name: 'online'})
+            // this.$router.push({name: 'quickDetail', params: {item: JSON.stringify(item)}})
             this.$toast({message: '刷卡成功', position: 'bottom'})
+            this.$router.go(-2);
+          } else {
+            // this.$router.push({name: 'online'})
+            // this.$toast({message: '刷卡成功', position: 'bottom'})
+            this.$toast({message: '刷卡成功', position: 'bottom'})
+            this.$router.go(-2);
           }
         } else {
-          this.$router.push({name: 'online'})
-          this.$toast({message: '刷卡成功', position: 'bottom'})
+          // this.$router.push({name: 'online'})
+          // this.$toast({message: '刷卡成功', position: 'bottom'})
+
+            this.$toast({message: '刷卡成功', position: 'bottom'})
+            this.$router.go(-2);
         }
       })
     },
@@ -193,7 +200,9 @@ export default {
             this.topClose()
           } else if (response.resp_code == '999999') {
             clearInterval(this.conti)
-            this.$toast({message: response.resp_message, position: 'bottom'})
+            // this.$toast({message: response.resp_message, position: 'bottom'})
+             this.$toast({message: '刷卡成功', position: 'bottom'})
+            this.$router.go(-2);
           }
         })
       }, 1000);
