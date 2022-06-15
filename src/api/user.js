@@ -365,3 +365,12 @@ export function getVipLevelList(){
   })
 }
 
+
+export function getBrandAccount() {
+  return request({
+    url: '/user/app/brand/account/get',
+    method: 'post',
+  })
+}
+
+

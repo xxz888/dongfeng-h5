@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="item">
-          <div class="withdrawal " @click="withdraw()">立即提现</div>
+          <div class="withdrawal" @click="withdraw()">立即提现</div>
         </div>
       </div>
       <div class="profit_home_cont_box">
@@ -82,6 +82,10 @@
               <img src="../../assets/profit/rule_icon.png" alt="">
               <p>收益规则</p>
             </li> -->
+            <li class="item" @click="brandAccountAction" v-if="brandAccount.balance">
+              <img src="../../assets/profit/bonus_icon.png" alt="">
+              <p>品牌提现</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -102,7 +106,7 @@ import {
   getMessage
 } from '@/api/showBrand'
 import {
-  getAccountQuery, getSumrebater, userInfoQuery, getUserHead
+  getAccountQuery, getSumrebater, userInfoQuery, getUserHead,getBrandAccount
 } from "@/api/user";
 
 export default {
@@ -119,6 +123,7 @@ export default {
       allRebate: 0,
       user: {},
       userAccount: {},
+      brandAccount:{},
     };
   },
   components: {
@@ -132,8 +137,13 @@ export default {
     this._getAccountQuery()
     this.getUserHeader()
     this._userInfoQuery()
+    this._getBrandAccount()
   },
   methods: {
+    //品牌提现
+    brandAccountAction(){
+        this.$router.push({name: 'withdrawBrand', params: {item: this.brandAccount}})
+    },
     onClickLeft() {
       this.publicJs.back();
     },
@@ -142,6 +152,11 @@ export default {
       getMessage(this.userId).then(res => {
 
       })
+    },
+    _getBrandAccount(){
+        getBrandAccount().then(res => {
+          this.brandAccount = res.result;
+        })
     },
     _newsQuery() {
       newsQuery(this.global.brandId, '功能跳转').then(res => {

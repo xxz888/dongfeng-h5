@@ -387,6 +387,14 @@ const routes = [
     meta: { title: '提现' }
   },
   {
+    path: "/withdrawBrand/:item",
+    name: "withdrawBrand",
+    component: () => import("@/views/user/withdrawBrand"),
+    meta: { title: '品牌提现' }
+  },
+
+  
+  {
     path: '/shouyiguize/:type',
     name: 'shouyiguize',
     component: () => import('@/views/profit/shouyiguize'),
